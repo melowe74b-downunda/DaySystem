@@ -1,0 +1,19 @@
+{
+  "name": "DaySystem",
+  "short_name": "DaySystem",
+  "description": "Fix your day. Everything follows.",
+  "start_url": "/app.html",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#c8963e",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["productivity", "lifestyle"],
+  "shortcuts": [
+    { "name": "Dashboard", "url": "/app.html#dashboard", "description": "Open daily checklist" },
+    { "name": "Focus", "url": "/app.html#focus", "description": "Start a focus session" }
+  ]
+}
