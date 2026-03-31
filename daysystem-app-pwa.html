@@ -10,23 +10,24 @@
 <link rel="manifest" href="manifest.json">
 <title>DaySystem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink: #080808; --ink2: #111; --s1: #141414; --s2: #1a1a1a; --s3: #222;
   --b1: rgba(255,255,255,0.07); --b2: rgba(255,255,255,0.13); --b3: rgba(255,255,255,0.2);
   --white: #fff; --muted: #888; --mid: #555;
   --gold: #c8963e; --gold2: #e0ac55; --gd: rgba(200,150,62,0.13);
-  --green: #4ade80; --gnd: rgba(74,222,128,0.11);
-  --red: #f87171; --rdd: rgba(248,113,113,0.12);
+  --plat: #C8C8D4; --platd: rgba(200,200,212,0.12);
+  --green: #C8C8D4; --gnd: rgba(200,200,212,0.12);
+  --red: #C8C8D4; --rdd: rgba(200,200,212,0.1);
   --r: 12px; --rl: 18px; --rx: 24px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bot: env(safe-area-inset-bottom, 0px);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; background: var(--ink); color: var(--white); font-family: 'Syne', sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; }
-button { cursor: pointer; font-family: 'Syne', sans-serif; }
-input, textarea { font-family: 'Syne', sans-serif; }
+html, body { height: 100%; background: var(--ink); color: var(--white); font-family: 'Barlow', sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; }
+button { cursor: pointer; font-family: 'Barlow', sans-serif; }
+input, textarea { font-family: 'Barlow', sans-serif; }
 a { color: inherit; text-decoration: none; }
 
 /* ── LAYOUT ── */
@@ -91,19 +92,19 @@ a { color: inherit; text-decoration: none; }
 
 /* ── TOPBAR ── */
 .topbar { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; gap: 1rem; }
-.topbar h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.8px; }
+.topbar h1 { font-size: 1.35rem; font-weight: 600; letter-spacing: 0px; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
 .topbar-date { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 3px; }
 .topbar-actions { display: flex; gap: 8px; flex-shrink: 0; }
 
 /* ── BUTTONS ── */
-.btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: var(--r); font-size: 13px; font-weight: 700; border: none; transition: all 0.15s; cursor: pointer; font-family: 'Syne', sans-serif; letter-spacing: 0.1px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: var(--r); font-size: 13px; font-weight: 700; border: none; transition: all 0.15s; cursor: pointer; font-family: 'Barlow', sans-serif; letter-spacing: 0.1px; }
 .btn-white { background: var(--white); color: var(--ink); }
 .btn-white:hover { background: #eee; }
 .btn-ghost { background: var(--s2); color: var(--muted); border: 1px solid var(--b1); }
 .btn-ghost:hover { color: var(--white); border-color: var(--b2); }
 .btn-gold { background: var(--gd); color: var(--gold); border: 1px solid rgba(200,150,62,0.22); }
 .btn-gold:hover { background: rgba(200,150,62,0.2); }
-.btn-danger { background: var(--rdd); color: var(--red); border: 1px solid rgba(248,113,113,0.18); }
+.btn-danger { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--b1); }
 .btn-sm { padding: 6px 12px; font-size: 12px; }
 .btn-full { width: 100%; justify-content: center; padding: 13px; font-size: 14px; }
 
@@ -114,9 +115,9 @@ a { color: inherit; text-decoration: none; }
 .card-grid4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
 .metric-card { background: var(--s2); border: 1px solid var(--b1); border-radius: var(--r); padding: 1rem 1.1rem; }
 .metric-lbl { font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); font-family: 'DM Mono', monospace; margin-bottom: 5px; }
-.metric-val { font-size: 1.7rem; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.metric-val { font-size: 1.5rem; font-weight: 700; letter-spacing: 0px; line-height: 1; }
 .metric-val.gold { color: var(--gold); }
-.metric-val.green { color: var(--green); }
+.metric-val.green { color: var(--plat); }
 .card-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .card-title { font-size: 11px; font-family: 'DM Mono', monospace; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); }
 
@@ -139,7 +140,7 @@ a { color: inherit; text-decoration: none; }
   width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid var(--b2);
   flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s;
 }
-.ci.done .ci-box { background: var(--green); border-color: var(--green); }
+.ci.done .ci-box { background: var(--gold); border-color: var(--gold); }
 .ci-check { display: none; stroke: var(--ink); }
 .ci.done .ci-check { display: block; }
 .ci-label { font-size: 14px; font-weight: 500; flex: 1; }
@@ -148,14 +149,14 @@ a { color: inherit; text-decoration: none; }
 
 /* ── TAGS ── */
 .tag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: 0.2px; }
-.tag-green { background: var(--gnd); color: var(--green); }
+.tag-green { background: rgba(200,200,212,0.1); color: var(--plat); }
 .tag-gold { background: var(--gd); color: var(--gold); }
 .tag-dim { background: var(--s3); color: var(--muted); }
 
 /* ── WEEK STRIP ── */
 .week-strip { display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; }
 .wday { text-align: center; padding: 10px 4px; background: var(--s2); border: 1px solid var(--b1); border-radius: 10px; cursor: default; transition: all 0.18s; }
-.wday.done { background: var(--gnd); border-color: rgba(74,222,128,0.2); }
+.wday.done { background: rgba(200,150,62,0.08); border-color: rgba(200,150,62,0.2); }
 .wday.today { background: var(--gd); border-color: rgba(200,150,62,0.3); }
 .wday-lbl { font-size: 9px; font-family: 'DM Mono', monospace; color: var(--muted); }
 .wday.today .wday-lbl { color: var(--gold); }
@@ -167,7 +168,7 @@ a { color: inherit; text-decoration: none; }
 .t-table td { padding: 10px 10px; border-bottom: 1px solid var(--b1); vertical-align: middle; }
 .t-table tr:last-child td { border-bottom: none; }
 .tdot { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--b2); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.18s; }
-.tdot.on { background: var(--green); border-color: var(--green); }
+.tdot.on { background: var(--gold); border-color: var(--gold); }
 
 /* ── FOCUS ── */
 .timer-wrap { display: flex; flex-direction: column; align-items: center; padding: 2rem 0 1rem; }
@@ -180,12 +181,12 @@ a { color: inherit; text-decoration: none; }
 .focus-blocks { display: flex; flex-direction: column; gap: 8px; margin-top: 1rem; }
 .fblock { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--s2); border: 1px solid var(--b1); border-radius: var(--r); transition: all 0.18s; }
 .fblock.active { border-color: var(--gold); background: var(--gd); }
-.fblock.done-b { opacity: 0.42; }
+.fblock.done-b { opacity: 0.35; }
 .fblock-num { width: 28px; height: 28px; border-radius: 8px; background: var(--s3); border: 1px solid var(--b1); display: flex; align-items: center; justify-content: center; font-size: 12px; font-family: 'DM Mono', monospace; color: var(--muted); flex-shrink: 0; }
 .fblock.active .fblock-num { background: var(--gold); color: var(--ink); font-weight: 800; border-color: var(--gold); }
 .fblock-label { flex: 1; font-size: 14px; font-weight: 600; }
 .fblock-sub { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
-.dist-input { width: 100%; background: var(--s2); border: 1px solid var(--b1); border-radius: var(--r); padding: 10px 12px; color: var(--white); font-size: 13px; font-family: 'Syne', sans-serif; outline: none; transition: border 0.2s; }
+.dist-input { width: 100%; background: var(--s2); border: 1px solid var(--b1); border-radius: var(--r); padding: 10px 12px; color: var(--white); font-size: 13px; font-family: 'Barlow', sans-serif; outline: none; transition: border 0.2s; }
 .dist-input:focus { border-color: var(--gold); }
 .dist-item { padding: 8px 12px; background: var(--s2); border: 1px solid var(--b1); border-radius: 8px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; }
 
@@ -202,7 +203,7 @@ a { color: inherit; text-decoration: none; }
 .proto-item.p-done { opacity: 0.45; }
 .proto-item.p-active { border-color: var(--gold); background: var(--gd); }
 .proto-num { width: 32px; height: 32px; border-radius: 9px; background: var(--s3); border: 1px solid var(--b1); display: flex; align-items: center; justify-content: center; font-size: 13px; font-family: 'DM Mono', monospace; color: var(--muted); flex-shrink: 0; font-weight: 700; }
-.proto-item.p-done .proto-num { background: var(--gnd); color: var(--green); border-color: rgba(74,222,128,0.25); }
+.proto-item.p-done .proto-num { background: rgba(200,200,212,0.1); color: var(--plat); border-color: rgba(200,200,212,0.2); }
 .proto-item.p-active .proto-num { background: var(--gold); color: var(--ink); border-color: var(--gold); }
 .proto-info { flex: 1; }
 .proto-title { font-size: 14px; font-weight: 700; }
@@ -211,14 +212,14 @@ a { color: inherit; text-decoration: none; }
 /* ── ALERT ── */
 .alert { padding: 11px 14px; border-radius: var(--r); font-size: 13.5px; font-weight: 600; margin-bottom: 14px; }
 .alert-gold { background: var(--gd); border: 1px solid rgba(200,150,62,0.22); color: var(--gold); }
-.alert-green { background: var(--gnd); border: 1px solid rgba(74,222,128,0.18); color: var(--green); }
+.alert-green { background: rgba(200,200,212,0.1); border: 1px solid rgba(200,200,212,0.2); color: var(--plat); }
 
 /* ── LOW ENERGY OVERLAY ── */
 .overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); align-items: flex-end; justify-content: center; padding-bottom: var(--safe-bot); }
 .overlay.open { display: flex; animation: up 0.25s ease; }
 .overlay-sheet { background: var(--s1); border: 1px solid var(--b2); border-radius: var(--rx) var(--rx) 0 0; padding: 2rem; width: 100%; max-width: 520px; }
 .overlay-handle { width: 36px; height: 4px; background: var(--s3); border-radius: 99px; margin: 0 auto 1.5rem; }
-.overlay-title { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 0.3rem; }
+.overlay-title { font-size: 1.1rem; font-weight: 700; letter-spacing: 0px; margin-bottom: 0.3rem; }
 .overlay-sub { font-size: 13px; color: var(--muted); margin-bottom: 1.4rem; line-height: 1.6; }
 
 /* ── ONBOARDING ── */
@@ -231,7 +232,7 @@ a { color: inherit; text-decoration: none; }
 .ob-step { display: none; animation: up 0.3s ease; }
 .ob-step.active { display: block; }
 .ob-eyebrow { font-size: 11px; font-family: 'DM Mono', monospace; letter-spacing: 1px; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
-.ob-title { font-size: 2.1rem; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 0.8rem; }
+.ob-title { font-size: 1.75rem; font-weight: 700; letter-spacing: 0px; line-height: 1.15; margin-bottom: 0.8rem; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
 .ob-title em { font-style: italic; color: var(--gold); }
 .ob-sub { font-size: 14px; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
 .ob-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
@@ -240,7 +241,7 @@ a { color: inherit; text-decoration: none; }
 .ob-opt-icon { font-size: 1.3rem; width: 34px; text-align: center; flex-shrink: 0; }
 .ob-opt-label { font-size: 14px; font-weight: 600; }
 .ob-opt-sub { font-size: 12px; color: var(--muted); }
-.ob-input { width: 100%; background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r); padding: 13px 16px; color: var(--white); font-size: 15px; font-family: 'Syne', sans-serif; outline: none; margin-bottom: 2rem; transition: border 0.2s; }
+.ob-input { width: 100%; background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r); padding: 13px 16px; color: var(--white); font-size: 15px; font-family: 'Barlow', sans-serif; outline: none; margin-bottom: 2rem; transition: border 0.2s; }
 .ob-input:focus { border-color: var(--gold); }
 
 /* ── DIVIDER ── */
@@ -310,15 +311,15 @@ a { color: inherit; text-decoration: none; }
       <p class="ob-sub">No wrong answers — this sets your starting point.</p>
       <div class="ob-options">
         <div class="ob-opt sel" onclick="selectOpt(this)">
-          <div class="ob-opt-icon">🔴</div>
+          <div class="ob-opt-icon"><svg width="18" height="18" viewBox="0 0 18 18" style="display:inline-block;vertical-align:middle;flex-shrink:0"><circle cx="9" cy="9" r="7" fill="#888"/></svg></div>
           <div><div class="ob-opt-label">Messy and unstructured</div><div class="ob-opt-sub">Constantly restarting, nothing sticking</div></div>
         </div>
         <div class="ob-opt" onclick="selectOpt(this)">
-          <div class="ob-opt-icon">🟡</div>
+          <div class="ob-opt-icon"><svg width="18" height="18" viewBox="0 0 18 18" style="display:inline-block;vertical-align:middle;flex-shrink:0"><circle cx="9" cy="9" r="7" fill="#C8C8D4"/></svg></div>
           <div><div class="ob-opt-label">Inconsistent</div><div class="ob-opt-sub">Works sometimes, falls apart other times</div></div>
         </div>
         <div class="ob-opt" onclick="selectOpt(this)">
-          <div class="ob-opt-icon">🟢</div>
+          <div class="ob-opt-icon"><svg width="18" height="18" viewBox="0 0 18 18" style="display:inline-block;vertical-align:middle;flex-shrink:0"><circle cx="9" cy="9" r="7" fill="var(--gold)"/></svg></div>
           <div><div class="ob-opt-label">Good, but I want more</div><div class="ob-opt-sub">Solid base, ready to compound it</div></div>
         </div>
       </div>
@@ -351,7 +352,7 @@ a { color: inherit; text-decoration: none; }
   <div class="mobile-header">
     <div class="mob-logo" style="display:flex;align-items:center;gap:9px"><svg width="28" height="28" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="-90" x2="0" y2="-54" stroke="white" stroke-width="10.5" stroke-linecap="square"/><line x1="90" y1="0" x2="54" y2="0" stroke="white" stroke-width="10.5" stroke-linecap="square"/><line x1="0" y1="87" x2="0" y2="57" stroke="white" stroke-width="9" stroke-linecap="square"/><line x1="-90" y1="0" x2="-54" y2="0" stroke="white" stroke-width="10.5" stroke-linecap="square"/><line x1="45" y1="-77.9" x2="28.5" y2="-49.4" stroke="white" stroke-width="8.5" stroke-linecap="square"/><line x1="77.9" y1="-45" x2="49.4" y2="-28.5" stroke="white" stroke-width="8.5" stroke-linecap="square"/><line x1="-45" y1="-77.9" x2="-28.5" y2="-49.4" stroke="white" stroke-width="8.5" stroke-linecap="square"/><line x1="-77.9" y1="-45" x2="-49.4" y2="-28.5" stroke="white" stroke-width="8.5" stroke-linecap="square"/><line x1="77.9" y1="45" x2="52" y2="30" stroke="white" stroke-width="6" stroke-linecap="square"/><line x1="45" y1="77.9" x2="30" y2="52" stroke="white" stroke-width="6" stroke-linecap="square"/><line x1="-45" y1="77.9" x2="-30" y2="52" stroke="white" stroke-width="6" stroke-linecap="square"/><line x1="-77.9" y1="45" x2="-52" y2="30" stroke="white" stroke-width="6" stroke-linecap="square"/></svg><span style="font-family:'Trebuchet MS','Century Gothic','Gill Sans',sans-serif;font-size:0.95rem;font-weight:900;letter-spacing:1px"><span style="color:#ffffff">DAY</span><span style="color:#C8C8D4">SYSTEM</span></span></div>
     <div style="display:flex;align-items:center;gap:8px">
-      <div class="mob-streak">🔥 <span id="mob-streak">4</span></div>
+      <div class="mob-streak"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="4 18 4 10 12 4 20 10 20 18"/><line x1="12" y1="4" x2="12" y2="18"/></svg> <span id="mob-streak">4</span></div>
       <button class="btn btn-ghost btn-sm" onclick="openLowEnergy()" style="padding:6px 10px;font-size:12px">Low energy?</button>
     </div>
   </div>
@@ -383,7 +384,7 @@ a { color: inherit; text-decoration: none; }
       </button>
 
       <div class="sidebar-footer">
-        <div class="streak-badge">🔥 <span id="desk-streak">4</span> day streak</div>
+        <div class="streak-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="4 18 4 10 12 4 20 10 20 18"/><line x1="12" y1="4" x2="12" y2="18"/></svg> <span id="desk-streak">4</span> day streak</div>
         <button class="install-btn" id="install-btn" onclick="installPWA()" style="display:none">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v13M8 11l4 4 4-4M3 18h18"/></svg>
           Install App
@@ -411,8 +412,8 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="card-grid4">
-          <div class="metric-card"><div class="metric-lbl">Progress</div><div class="metric-val green" id="pct-val">0%</div></div>
-          <div class="metric-card"><div class="metric-lbl">Streak</div><div class="metric-val gold">🔥 4</div></div>
+          <div class="metric-card"><div class="metric-lbl">Progress</div><div class="metric-val" style="color:var(--plat)" id="pct-val">0%</div></div>
+          <div class="metric-card"><div class="metric-lbl">Streak</div><div class="metric-val gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="4 18 4 10 12 4 20 10 20 18"/><line x1="12" y1="4" x2="12" y2="18"/></svg> 4</div></div>
           <div class="metric-card"><div class="metric-lbl">This week</div><div class="metric-val">3/7</div></div>
           <div class="metric-card"><div class="metric-lbl">Tasks</div><div class="metric-val" id="task-count-val">0/6</div></div>
         </div>
@@ -468,7 +469,7 @@ a { color: inherit; text-decoration: none; }
               </div>
 
               <div class="alert alert-green" id="complete-alert" style="display:none;margin-top:12px;margin-bottom:0">
-                ✓ System complete. Streak extended. 🔥
+                ✓ System complete. Streak extended.
               </div>
             </div>
           </div>
@@ -476,7 +477,7 @@ a { color: inherit; text-decoration: none; }
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="card">
               <div class="card-hdr"><span class="card-title">One Thing</span><button class="btn btn-ghost btn-sm" onclick="editTask()">Edit</button></div>
-              <div id="dash-task" style="font-size:1.15rem;font-weight:800;letter-spacing:-0.4px;margin-bottom:10px">Complete the product draft</div>
+              <div id="dash-task" style="font-size:1.05rem;font-weight:700;letter-spacing:0px;margin-bottom:10px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase">Complete the product draft</div>
               <div class="prog-wrap" style="margin-bottom:10px"><div class="prog-fill" style="width:35%"></div></div>
               <button class="btn btn-ghost btn-sm" onclick="goto('focus',document.getElementById('nav-focus'))">→ Open Focus Planner</button>
             </div>
@@ -484,9 +485,9 @@ a { color: inherit; text-decoration: none; }
             <div class="card">
               <div class="card-hdr"><span class="card-title">This week</span></div>
               <div class="week-strip">
-                <div class="wday done"><div class="wday-lbl">Mon</div><div class="wday-icon">✓</div></div>
-                <div class="wday done"><div class="wday-lbl">Tue</div><div class="wday-icon">✓</div></div>
-                <div class="wday done"><div class="wday-lbl">Wed</div><div class="wday-icon">✓</div></div>
+                <div class="wday done"><div class="wday-lbl">Mon</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                <div class="wday done"><div class="wday-lbl">Tue</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                <div class="wday done"><div class="wday-lbl">Wed</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
                 <div class="wday today"><div class="wday-lbl" style="color:var(--gold)">Thu</div><div class="wday-icon" style="font-size:11px;color:var(--gold)">now</div></div>
                 <div class="wday"><div class="wday-lbl">Fri</div><div class="wday-icon" style="color:var(--mid)">—</div></div>
                 <div class="wday"><div class="wday-lbl">Sat</div><div class="wday-icon" style="color:var(--mid)">—</div></div>
@@ -512,9 +513,9 @@ a { color: inherit; text-decoration: none; }
         <div class="card" style="margin-bottom:14px">
           <div class="card-hdr"><span class="card-title">This week</span><span class="tag tag-green">3 complete</span></div>
           <div class="week-strip">
-            <div class="wday done"><div class="wday-lbl">23 Mon</div><div class="wday-icon">✓</div></div>
-            <div class="wday done"><div class="wday-lbl">24 Tue</div><div class="wday-icon">✓</div></div>
-            <div class="wday done"><div class="wday-lbl">25 Wed</div><div class="wday-icon">✓</div></div>
+            <div class="wday done"><div class="wday-lbl">23 Mon</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+            <div class="wday done"><div class="wday-lbl">24 Tue</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+            <div class="wday done"><div class="wday-lbl">25 Wed</div><div class="wday-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg></div></div>
             <div class="wday today"><div class="wday-lbl" style="color:var(--gold)">26 Thu</div><div class="wday-icon" style="color:var(--gold);font-size:11px">now</div></div>
             <div class="wday"><div class="wday-lbl">27 Fri</div><div class="wday-icon" style="color:var(--mid)">—</div></div>
             <div class="wday"><div class="wday-lbl">28 Sat</div><div class="wday-icon" style="color:var(--mid)">—</div></div>
@@ -546,7 +547,7 @@ a { color: inherit; text-decoration: none; }
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="card">
               <div class="card-hdr"><span class="card-title">Today's One Thing</span></div>
-              <div contenteditable="true" id="focus-task" style="font-size:1.2rem;font-weight:800;letter-spacing:-0.4px;outline:none;padding:4px 0 8px;border-bottom:1px solid var(--b1);margin-bottom:10px">Complete the product draft</div>
+              <div contenteditable="true" id="focus-task" style="font-size:1.05rem;font-weight:700;letter-spacing:0px;outline:none;padding:4px 0 8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;border-bottom:1px solid var(--b1);margin-bottom:10px">Complete the product draft</div>
               <p style="font-size:13px;color:var(--muted);line-height:1.6">If it's not this task, it is a distraction. Defer everything else.</p>
             </div>
             <div class="card">
@@ -734,20 +735,20 @@ a { color: inherit; text-decoration: none; }
 .drag-handle span { display: block; width: 14px; height: 1.5px; background: var(--white); border-radius: 99px; }
 .edit-label-input {
   flex: 1; background: transparent; border: none; outline: none;
-  color: var(--white); font-size: 13.5px; font-family: 'Syne', sans-serif;
+  color: var(--white); font-size: 13.5px; font-family: 'Barlow', sans-serif;
   font-weight: 500; min-width: 0;
 }
 .edit-label-input:focus { color: var(--white); }
 .tag-select {
   background: var(--s3); border: 1px solid var(--b1); border-radius: 6px;
-  color: var(--muted); font-size: 11px; font-family: 'Syne', sans-serif;
+  color: var(--muted); font-size: 11px; font-family: 'Barlow', sans-serif;
   padding: 3px 6px; outline: none; cursor: pointer; flex-shrink: 0;
   transition: border-color 0.18s;
 }
 .tag-select:focus { border-color: var(--gold); }
-.tag-select.tag-morning { color: #7dd3fc; }
-.tag-select.tag-midday  { color: #86efac; }
-.tag-select.tag-night   { color: #c4b5fd; }
+.tag-select.tag-morning { color: #C8C8D4; }
+.tag-select.tag-midday  { color: #aaaaaa; }
+.tag-select.tag-night   { color: #999999; }
 .tag-select.tag-priority{ color: var(--gold); }
 .del-btn {
   width: 26px; height: 26px; border-radius: 7px; border: none;
@@ -799,7 +800,7 @@ function nextId(items) { return items.length ? Math.max(...items.map(i=>i.id)) +
 
 // ── TAG COLOUR ──
 const TAG_CLASSES = { Morning:'tag-morning', Midday:'tag-midday', Night:'tag-night', Priority:'tag-priority' };
-const TAG_STYLE   = { Morning:'background:rgba(125,211,252,0.1);color:#7dd3fc', Midday:'background:rgba(134,239,172,0.1);color:#86efac', Night:'background:rgba(196,181,253,0.1);color:#c4b5fd', Priority:'background:var(--gd);color:var(--gold)' };
+const TAG_STYLE   = { Morning:'background:rgba(200,200,212,0.1);color:#C8C8D4', Midday:'background:rgba(255,255,255,0.07);color:#aaaaaa', Night:'background:rgba(200,200,212,0.08);color:#999999', Priority:'background:var(--gd);color:var(--gold)' };
 
 // ── RENDER VIEW MODE ──
 function renderViewList() {
